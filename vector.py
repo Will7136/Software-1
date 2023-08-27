@@ -1,10 +1,24 @@
 class Vector:
-    def __init__(self, data = None):
-        if data != None:
+    def __init__(self, data = None, *values):
+        
+        if (values == ()) and (data != None):
             for x in range (0,len(data)):
                 if type(data[x]) != float:
                     data[x] = float(data[x])
             self._vector = data.copy()
+        elif (values != ()):
+            new_data = []
+            for y in range (0, len(values) + 1):
+                if y == 0:
+                    if type(data) != float:
+                        data = float(data)
+                    new_data.append(data)
+                else:
+                    if values[y - 1] != float:
+                        new_data.append(float(values[y - 1]))
+                    else:
+                        new_data.append(values[y-1])
+            self._vector = new_data.copy()
         else:
             self._vector = []
         pass
@@ -78,14 +92,14 @@ class Vector:
         raise TypeError
     
     def __iadd__(self, other_vector):
-        return self.add()
+        return self.add(other_vector)
     
     def __imul__(self, scalar):
         return self.scalar_product(scalar)
 
 v1 = Vector([1, 2, 3])
 v2 = Vector([])
+print(v1[2])
 print(v1)
 print(v2)
-
 
