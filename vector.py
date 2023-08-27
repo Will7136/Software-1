@@ -96,10 +96,3 @@ class Vector:
     
     def __imul__(self, scalar):
         return self.scalar_product(scalar)
-
-v1 = Vector([1, 2, 3])
-v2 = Vector([])
-print(v1[2])
-print(v1)
-print(v2)
-
