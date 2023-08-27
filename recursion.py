@@ -1,3 +1,4 @@
+############ Excersize 1 ########################
 def is_power(b, a):
     try:
         isPowerBool = False
@@ -17,7 +18,8 @@ def is_power(b, a):
             return False
     except:
         return False
-    
+
+############ Excersize 2 ########################
 def rec_sum(list):
     sum = 0
     if len(list) == 0:
@@ -27,6 +29,7 @@ def rec_sum(list):
         sum = rec_sum(list)
         return(sum + currentVal)
     
+############ Excersize 3 ########################
 def sum_digits(num):
     if num == 0:
         return (0)
