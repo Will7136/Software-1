@@ -40,6 +40,20 @@ def to_base10(input):
             total = total + 2**(len(binary) - (counter + 1))
     return(total)
 
+######################### EXERCISE 4 #############################################
+def bin_pyramid(row_num):
+    for counter in range(1, (row_num +1)):
+        bin_row(counter)
+        
+def bin_row(length):
+    row_str = ""
+    for x in range(0, (length)):
+        if (length - x) % 2 == 0:
+            row_str = row_str + "0"
+        else:
+            row_str = row_str + "1"
+    print(row_str)
+
 ######################### EXERCISE 5 #############################################
 def sum_lists(data):
     output =[]
